@@ -161,12 +161,28 @@ df_bench, raw_csv_baseline = load_benchmark_summary()
 # Premium Sidebar
 # ==============================================================================
 with st.sidebar:
-    # Brand / Logo
+    # High-Tech SVG Emblem & Brand Header
     st.markdown("""
     <div class="sidebar-brand">
-        <span class="logo-icon">⚡</span>
-        <p class="logo-title">HSFB Dashboard</p>
-        <p class="logo-subtitle">Hadoop Storage Benchmarking</p>
+        <div class="logo-box">
+            <svg class="brand-svg-logo" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="48" height="48" rx="14" fill="url(#brandGrad)" />
+                <path d="M14 24L22 14L34 24L26 34L14 24Z" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="24" cy="24" r="4" fill="#38bdf8"/>
+                <path d="M19 19L29 29M29 19L19 29" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+                <defs>
+                    <linearGradient id="brandGrad" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#2563eb"/>
+                        <stop offset="0.5" stop-color="#7c3aed"/>
+                        <stop offset="1" stop-color="#06b6d4"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+        <div class="logo-text-group">
+            <h2 class="logo-title">HSFB CORE</h2>
+            <span class="logo-badge">Hadoop Benchmark v2.0</span>
+        </div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -249,6 +265,19 @@ st.markdown("""
 # ==============================================================================
 if page == "🏠 Home":
 
+    # Hero Banner
+    st.markdown("""
+    <div class="home-hero-banner">
+        <div class="hero-content">
+            <div class="hero-chip">🚀 Big Data Analytics Capstone · Topic 52</div>
+            <h1 class="hero-title">Empirical Storage Format Benchmarking</h1>
+            <p class="hero-desc">
+                High-performance evaluation framework analyzing <strong>Apache Parquet</strong>, <strong>Apache Avro</strong>, and <strong>Hadoop SequenceFile</strong> on 3.2M+ NYC Taxi Trip Records across compression ratio, write throughput, vectorized column projection, and schema evolution.
+            </p>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
     # Metric Cards Row
     m1, m2, m3, m4 = st.columns(4)
     m1.metric("Rows Analysed", f"{clean_summary.get('initial_rows', 3475226):,}")
@@ -256,7 +285,7 @@ if page == "🏠 Home":
     m3.metric("Data Retention", f"{clean_summary.get('retention_rate_pct', 92.5)}%")
     m4.metric("Storage Formats", "3 Formats × 10 Codecs")
 
-    st.markdown("<div style='height: 1.5rem;'></div>", unsafe_allow_html=True)
+    st.markdown("<div style='height: 1.2rem;'></div>", unsafe_allow_html=True)
 
     # Format Cards
     c1, c2, c3 = st.columns(3)
@@ -284,6 +313,7 @@ if page == "🏠 Home":
             <span class="card-tag">Native Hadoop MapReduce</span>
         </div>
         """, unsafe_allow_html=True)
+
 
     st.markdown("<div style='height: 1.5rem;'></div>", unsafe_allow_html=True)
 

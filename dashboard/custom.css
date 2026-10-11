@@ -232,25 +232,71 @@ html, body {
     display: none !important;
 }
 
+/* Streamlit Header & Sidebar Toggle Button */
 header[data-testid="stHeader"] {
     background: transparent !important;
+    height: 3.5rem !important;
+    z-index: 100000 !important;
 }
 
-[data-testid="stSidebarCollapsedControl"] button,
-[data-testid="stExpandSidebarButton"],
-[data-testid="stSidebarCollapseButton"] button {
-    color: var(--text-dim) !important;
-    border-radius: var(--r-s) !important;
-    transition: all 0.25s var(--ease-std);
+div[data-testid="stSidebarCollapsedControl"],
+div[data-testid="stSidebarCollapseButton"],
+div[data-testid="stExpandSidebarButton"] {
+    display: block !important;
+    visibility: visible !important;
+    position: fixed !important;
+    top: 0.85rem !important;
+    left: 0.85rem !important;
+    z-index: 1000000 !important;
 }
 
-[data-testid="stSidebarCollapsedControl"] button:hover,
-[data-testid="stExpandSidebarButton"]:hover,
-[data-testid="stSidebarCollapseButton"] button:hover {
-    color: #fff !important;
-    background: rgba(96, 165, 250, 0.18) !important;
-    transform: scale(1.1);
+div[data-testid="stSidebarCollapsedControl"] button,
+div[data-testid="stExpandSidebarButton"] button,
+div[data-testid="stSidebarCollapseButton"] button {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+    background: #1e293b !important;
+    border: 1.5px solid #3b82f6 !important;
+    border-radius: 8px !important;
+    width: 40px !important;
+    height: 40px !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5) !important;
+    cursor: pointer !important;
 }
+
+/* Hide default arrow icon inside toggle */
+div[data-testid="stSidebarCollapsedControl"] button svg,
+div[data-testid="stExpandSidebarButton"] button svg,
+div[data-testid="stSidebarCollapseButton"] button svg {
+    display: none !important;
+}
+
+/* 3-line hamburger icon */
+div[data-testid="stSidebarCollapsedControl"] button::before,
+div[data-testid="stExpandSidebarButton"] button::before,
+div[data-testid="stSidebarCollapseButton"] button::before {
+    content: '' !important;
+    position: absolute !important;
+    width: 20px !important;
+    height: 2.5px !important;
+    background: #ffffff !important;
+    border-radius: 2px !important;
+    box-shadow: 0 -6px 0 #ffffff, 0 6px 0 #ffffff !important;
+    transition: background 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+div[data-testid="stSidebarCollapsedControl"] button:hover,
+div[data-testid="stExpandSidebarButton"] button:hover,
+div[data-testid="stSidebarCollapseButton"] button:hover {
+    background: #2563eb !important;
+    border-color: #60a5fa !important;
+    box-shadow: 0 0 18px rgba(59, 130, 246, 0.8) !important;
+}
+
+
+
 
 /* ==============================================================================
    2. SIDEBAR - PREMIUM GLASSMORPHISM
@@ -275,55 +321,129 @@ section[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] h5 {
 /* Sidebar Brand */
 .sidebar-brand {
     position: relative;
-    text-align: center;
-    padding: 1.5rem 1rem 1.2rem;
-    margin-bottom: 1.3rem;
-    border-radius: var(--r-l);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
-    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 1.1rem 1rem;
+    margin-bottom: 1.25rem;
+    border-radius: var(--r-m);
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.75) 0%, rgba(15, 23, 42, 0.9) 100%);
+    border: 1px solid var(--line-strong);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
     overflow: hidden;
-    isolation: isolate;
 }
 
 .sidebar-brand::before {
     content: '';
     position: absolute;
-    top: 46px;
-    left: 50%;
-    width: 120px;
-    height: 120px;
-    background: radial-gradient(circle, rgba(96, 165, 250, 0.55) 0%, rgba(139, 92, 246, 0.25) 45%, transparent 70%);
-    animation: haloPulse 4.5s ease-in-out infinite;
-    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
 }
 
-.sidebar-brand .logo-icon {
-    display: inline-block;
-    font-size: 2.6rem;
-    filter: drop-shadow(0 0 16px rgba(96, 165, 250, 0.8));
-    animation: iconFloat 4.2s ease-in-out infinite;
+.sidebar-brand .logo-box {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-brand .brand-svg-logo {
+    width: 42px;
+    height: 42px;
+    filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.5));
+    transition: transform 0.4s var(--ease-spring);
+}
+
+.sidebar-brand:hover .brand-svg-logo {
+    transform: rotate(8deg) scale(1.08);
+}
+
+.sidebar-brand .logo-text-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
 }
 
 .sidebar-brand .logo-title {
-    margin: 0.35rem 0 0.15rem;
-    font-size: 1.25rem;
+    margin: 0;
+    font-size: 1.15rem;
     font-weight: 800;
-    letter-spacing: -0.03em;
-    background: linear-gradient(110deg, #93c5fd 0%, #c4b5fd 50%, #93c5fd 100%);
-    background-size: 200% 100%;
+    letter-spacing: -0.02em;
+    color: #f8fafc;
+    background: linear-gradient(110deg, #ffffff 0%, #cbd5e1 50%, #93c5fd 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.sidebar-brand .logo-subtitle {
-    margin: 0;
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
+.sidebar-brand .logo-badge {
+    display: inline-block;
+    padding: 0.15rem 0.45rem;
+    border-radius: 4px;
+    font-size: 0.62rem;
+    font-weight: 700;
     text-transform: uppercase;
-    color: var(--text-dim);
+    letter-spacing: 0.06em;
+    background: rgba(59, 130, 246, 0.18);
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.3);
 }
+
+/* Home Hero Banner */
+.home-hero-banner {
+    position: relative;
+    padding: 1.6rem 2rem;
+    margin-bottom: 1.4rem;
+    border-radius: var(--r-l);
+    background: linear-gradient(135deg, rgba(20, 32, 58, 0.85) 0%, rgba(11, 19, 36, 0.95) 100%);
+    border: 1px solid var(--line-strong);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+}
+
+.home-hero-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2.5px;
+    background: linear-gradient(90deg, #10b981, #3b82f6, #8b5cf6, #ec4899);
+}
+
+.home-hero-banner .hero-chip {
+    display: inline-block;
+    padding: 0.25rem 0.65rem;
+    border-radius: 9999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.35);
+    margin-bottom: 0.65rem;
+}
+
+.home-hero-banner .hero-title {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.65rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: #ffffff;
+}
+
+.home-hero-banner .hero-desc {
+    margin: 0;
+    font-size: 0.94rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 900px;
+}
+
 
 /* Sidebar Navigation Items */
 section[data-testid="stSidebar"] div[data-testid="stRadio"] > div[role="radiogroup"] {
