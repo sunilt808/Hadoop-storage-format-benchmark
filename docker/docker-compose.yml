@@ -1,0 +1,50 @@
+version: "3.8"
+
+services:
+  namenode:
+    image: bde2020/hadoop-namenode:2.0.0-hadoop3.2.1-java8
+    container_name: bda_hadoop_namenode
+    restart: always
+    ports:
+      - "9870:9870"  # NameNode Web UI
+      - "9000:9000"  # NameNode HDFS IPC
+    environment:
+      - CLUSTER_NAME=bda_benchmark_cluster
+    env_file:
+      - ./hadoop.env
+    volumes:
+      - hadoop_namenode:/hadoop/dfs/name
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9870/"]
+      interval: 15s
+      timeout: 10s
+      retries: 5
+
+  datanode:
+    image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
+    container_name: bda_hadoop_datanode
+    restart: always
+    ports:
+      - "9864:9864"  # DataNode Web UI
+      - "9866:9866"  # DataNode Data Transfer
+    depends_on:
+      - namenode
+    env_file:
+      - ./hadoop.env
+    volumes:
+      - hadoop_datanode:/hadoop/dfs/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9864/"]
+      interval: 15s
+      timeout: 10s
+      retries: 5
+
+volumes:
+  hadoop_namenode:
+    name: bda_hadoop_namenode_vol
+  hadoop_datanode:
+    name: bda_hadoop_datanode_vol
+
+networks:
+  default:
+    name: bda_hadoop_network

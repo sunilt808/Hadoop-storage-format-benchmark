@@ -1,0 +1,765 @@
+{
+  "timestamp": "2026-10-11 14:14:51",
+  "scale": "quick_1pct",
+  "iterations_per_test": 2,
+  "total_rows": 32146,
+  "raw_csv_mb": 3.29,
+  "hdfs_status": {
+    "status": "LOCAL_EMULATED",
+    "message": "Local High-Performance Filesystem Mode active",
+    "namenode": "N/A (Standalone Local Engine)",
+    "datanodes": "N/A"
+  },
+  "results": [
+    {
+      "format": "parquet",
+      "codec": "snappy",
+      "config_label": "PARQUET (snappy)",
+      "scale": "quick_1pct",
+      "num_rows": 32146,
+      "file_size_bytes": 968731,
+      "file_size_mb": 0.92,
+      "raw_csv_mb": 3.29,
+      "compression_ratio": 3.57,
+      "space_saving_pct": 71.95,
+      "write_time_sec": {
+        "mean": 0.022949999999999998,
+        "std_dev": 0.002192031021678299,
+        "median": 0.022949999999999998,
+        "min": 0.0214,
+        "max": 0.0245
+      },
+      "write_throughput_mb_s": {
+        "mean": 40.42,
+        "std_dev": 3.7759502115361663,
+        "median": 40.42,
+        "min": 37.75,
+        "max": 43.09
+      },
+      "write_throughput_rows_s": {
+        "mean": 1406488.1,
+        "std_dev": 131440.96828493,
+        "median": 1406488.1,
+        "min": 1313545.3,
+        "max": 1499430.9
+      },
+      "write_cpu_percent": {
+        "mean": 0.0,
+        "std_dev": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "write_peak_ram_mb": {
+        "mean": 115.055,
+        "std_dev": 1.1525840533340792,
+        "median": 115.055,
+        "min": 114.24,
+        "max": 115.87
+      },
+      "full_scan_sec": {
+        "mean": 0.022850000000000002,
+        "std_dev": 0.014354267658086915,
+        "median": 0.022850000000000002,
+        "min": 0.0127,
+        "max": 0.033
+      },
+      "column_subset_sec": {
+        "mean": 0.00655,
+        "std_dev": 0.0031819805153394643,
+        "median": 0.00655,
+        "min": 0.0043,
+        "max": 0.0088
+      },
+      "filtered_query_sec": {
+        "mean": 0.00975,
+        "std_dev": 0.0003535533905932741,
+        "median": 0.00975,
+        "min": 0.0095,
+        "max": 0.01
+      },
+      "aggregation_query_sec": {
+        "mean": 0.01,
+        "std_dev": 0.0012727922061357851,
+        "median": 0.01,
+        "min": 0.0091,
+        "max": 0.0109
+      }
+    },
+    {
+      "format": "parquet",
+      "codec": "gzip",
+      "config_label": "PARQUET (gzip)",
+      "scale": "quick_1pct",
+      "num_rows": 32146,
+      "file_size_bytes": 770113,
+      "file_size_mb": 0.73,
+      "raw_csv_mb": 3.29,
+      "compression_ratio": 4.48,
+      "space_saving_pct": 77.7,
+      "write_time_sec": {
+        "mean": 0.3368,
+        "std_dev": 0.009475230867899753,
+        "median": 0.3368,
+        "min": 0.3301,
+        "max": 0.3435
+      },
+      "write_throughput_mb_s": {
+        "mean": 2.185,
+        "std_dev": 0.06363961030678918,
+        "median": 2.185,
+        "min": 2.14,
+        "max": 2.23
+      },
+      "write_throughput_rows_s": {
+        "mean": 95481.85,
+        "std_dev": 2694.8546537800453,
+        "median": 95481.85,
+        "min": 93576.3,
+        "max": 97387.4
+      },
+      "write_cpu_percent": {
+        "mean": 86.315,
+        "std_dev": 0.8697413408594563,
+        "median": 86.315,
+        "min": 85.7,
+        "max": 86.93
+      },
+      "write_peak_ram_mb": {
+        "mean": 132.225,
+        "std_dev": 7.940809152724931,
+        "median": 132.225,
+        "min": 126.61,
+        "max": 137.84
+      },
+      "full_scan_sec": {
+        "mean": 0.031100000000000003,
+        "std_dev": 0.018384776310850236,
+        "median": 0.031100000000000003,
+        "min": 0.0181,
+        "max": 0.0441
+      },
+      "column_subset_sec": {
+        "mean": 0.00805,
+        "std_dev": 0.0009192388155425111,
+        "median": 0.00805,
+        "min": 0.0074,
+        "max": 0.0087
+      },
+      "filtered_query_sec": {
+        "mean": 0.01345,
+        "std_dev": 0.006293250352560273,
+        "median": 0.01345,
+        "min": 0.009,
+        "max": 0.0179
+      },
+      "aggregation_query_sec": {
+        "mean": 0.00855,
+        "std_dev": 0.0023334523779156074,
+        "median": 0.00855,
+        "min": 0.0069,
+        "max": 0.0102
+      }
+    },
+    {
+      "format": "parquet",
+      "codec": "zstd",
+      "config_label": "PARQUET (zstd)",
+      "scale": "quick_1pct",
+      "num_rows": 32146,
+      "file_size_bytes": 825535,
+      "file_size_mb": 0.79,
+      "raw_csv_mb": 3.29,
+      "compression_ratio": 4.18,
+      "space_saving_pct": 76.1,
+      "write_time_sec": {
+        "mean": 0.0267,
+        "std_dev": 0.002969848480983499,
+        "median": 0.0267,
+        "min": 0.0246,
+        "max": 0.0288
+      },
+      "write_throughput_mb_s": {
+        "mean": 29.695,
+        "std_dev": 3.330472939388637,
+        "median": 29.695,
+        "min": 27.34,
+        "max": 32.05
+      },
+      "write_throughput_rows_s": {
+        "mean": 1212502.2999999998,
+        "std_dev": 135901.5392820111,
+        "median": 1212502.2999999998,
+        "min": 1116405.4,
+        "max": 1308599.2
+      },
+      "write_cpu_percent": {
+        "mean": 0.0,
+        "std_dev": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "write_peak_ram_mb": {
+        "mean": 151.16000000000003,
+        "std_dev": 0.1979898987322341,
+        "median": 151.16000000000003,
+        "min": 151.02,
+        "max": 151.3
+      },
+      "full_scan_sec": {
+        "mean": 0.0219,
+        "std_dev": 0.017677669529663688,
+        "median": 0.0219,
+        "min": 0.0094,
+        "max": 0.0344
+      },
+      "column_subset_sec": {
+        "mean": 0.00805,
+        "std_dev": 0.0028991378028648445,
+        "median": 0.00805,
+        "min": 0.006,
+        "max": 0.0101
+      },
+      "filtered_query_sec": {
+        "mean": 0.01325,
+        "std_dev": 0.0024748737341529162,
+        "median": 0.01325,
+        "min": 0.0115,
+        "max": 0.015
+      },
+      "aggregation_query_sec": {
+        "mean": 0.0056,
+        "std_dev": 0.0018384776310850235,
+        "median": 0.0056,
+        "min": 0.0043,
+        "max": 0.0069
+      }
+    },
+    {
+      "format": "parquet",
+      "codec": "none",
+      "config_label": "PARQUET (none)",
+      "scale": "quick_1pct",
+      "num_rows": 32146,
+      "file_size_bytes": 1066708,
+      "file_size_mb": 1.02,
+      "raw_csv_mb": 3.29,
+      "compression_ratio": 3.24,
+      "space_saving_pct": 69.11,
+      "write_time_sec": {
+        "mean": 0.02325,
+        "std_dev": 0.003040559159102153,
+        "median": 0.02325,
+        "min": 0.0211,
+        "max": 0.0254
+      },
+      "write_throughput_mb_s": {
+        "mean": 44.07,
+        "std_dev": 5.713422791987303,
+        "median": 44.07,
+        "min": 40.03,
+        "max": 48.11
+      },
+      "write_throughput_rows_s": {
+        "mean": 1392664.0,
+        "std_dev": 180526.05829320036,
+        "median": 1392664.0,
+        "min": 1265012.8,
+        "max": 1520315.2
+      },
+      "write_cpu_percent": {
+        "mean": 0.0,
+        "std_dev": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "write_peak_ram_mb": {
+        "mean": 143.45499999999998,
+        "std_dev": 0.0070710678118791415,
+        "median": 143.45499999999998,
+        "min": 143.45,
+        "max": 143.46
+      },
+      "full_scan_sec": {
+        "mean": 0.0226,
+        "std_dev": 0.015980613254815975,
+        "median": 0.0226,
+        "min": 0.0113,
+        "max": 0.0339
+      },
+      "column_subset_sec": {
+        "mean": 0.00605,
+        "std_dev": 0.002757716446627535,
+        "median": 0.00605,
+        "min": 0.0041,
+        "max": 0.008
+      },
+      "filtered_query_sec": {
+        "mean": 0.0131,
+        "std_dev": 0.0012727922061357851,
+        "median": 0.0131,
+        "min": 0.0122,
+        "max": 0.014
+      },
+      "aggregation_query_sec": {
+        "mean": 0.00715,
+        "std_dev": 0.0002121320343559642,
+        "median": 0.00715,
+        "min": 0.007,
+        "max": 0.0073
+      }
+    },
+    {
+      "format": "avro",
+      "codec": "null",
+      "config_label": "AVRO (null)",
+      "scale": "quick_1pct",
+      "num_rows": 32146,
+      "file_size_bytes": 3564848,
+      "file_size_mb": 3.4,
+      "raw_csv_mb": 3.29,
+      "compression_ratio": 0.97,
+      "space_saving_pct": -3.22,
+      "write_time_sec": {
+        "mean": 0.2359,
+        "std_dev": 0.0059396969619670125,
+        "median": 0.2359,
+        "min": 0.2317,
+        "max": 0.2401
+      },
+      "write_throughput_mb_s": {
+        "mean": 14.415,
+        "std_dev": 0.36062445840513907,
+        "median": 14.415,
+        "min": 14.16,
+        "max": 14.67
+      },
+      "write_throughput_rows_s": {
+        "mean": 136329.95,
+        "std_dev": 3420.487632633699,
+        "median": 136329.95,
+        "min": 133911.3,
+        "max": 138748.6
+      },
+      "write_cpu_percent": {
+        "mean": 76.025,
+        "std_dev": 0.27577164466275395,
+        "median": 76.025,
+        "min": 75.83,
+        "max": 76.22
+      },
+      "write_peak_ram_mb": {
+        "mean": 185.12,
+        "std_dev": 0.08485281374238891,
+        "median": 185.12,
+        "min": 185.06,
+        "max": 185.18
+      },
+      "full_scan_sec": {
+        "mean": 0.22295,
+        "std_dev": 0.01534421715174808,
+        "median": 0.22295,
+        "min": 0.2121,
+        "max": 0.2338
+      },
+      "column_subset_sec": {
+        "mean": 0.19629999999999997,
+        "std_dev": 0.005515432893255071,
+        "median": 0.19629999999999997,
+        "min": 0.1924,
+        "max": 0.2002
+      },
+      "filtered_query_sec": {
+        "mean": 0.21050000000000002,
+        "std_dev": 0.013717871555019022,
+        "median": 0.21050000000000002,
+        "min": 0.2008,
+        "max": 0.2202
+      },
+      "aggregation_query_sec": {
+        "mean": 0.36375,
+        "std_dev": 0.027223611075682105,
+        "median": 0.36375,
+        "min": 0.3445,
+        "max": 0.383
+      }
+    },
+    {
+      "format": "avro",
+      "codec": "snappy",
+      "config_label": "AVRO (snappy)",
+      "scale": "quick_1pct",
+      "num_rows": 32146,
+      "file_size_bytes": 1395042,
+      "file_size_mb": 1.33,
+      "raw_csv_mb": 3.29,
+      "compression_ratio": 2.48,
+      "space_saving_pct": 59.61,
+      "write_time_sec": {
+        "mean": 0.43574999999999997,
+        "std_dev": 0.016051323932934625,
+        "median": 0.43574999999999997,
+        "min": 0.4244,
+        "max": 0.4471
+      },
+      "write_throughput_mb_s": {
+        "mean": 3.0549999999999997,
+        "std_dev": 0.10606601717798206,
+        "median": 3.0549999999999997,
+        "min": 2.98,
+        "max": 3.13
+      },
+      "write_throughput_rows_s": {
+        "mean": 73821.5,
+        "std_dev": 2721.2297367183055,
+        "median": 73821.5,
+        "min": 71897.3,
+        "max": 75745.7
+      },
+      "write_cpu_percent": {
+        "mean": 76.74000000000001,
+        "std_dev": 1.5556349186104066,
+        "median": 76.74000000000001,
+        "min": 75.64,
+        "max": 77.84
+      },
+      "write_peak_ram_mb": {
+        "mean": 185.43,
+        "std_dev": 0.18384776310849593,
+        "median": 185.43,
+        "min": 185.3,
+        "max": 185.56
+      },
+      "full_scan_sec": {
+        "mean": 0.42615000000000003,
+        "std_dev": 0.14941166286471752,
+        "median": 0.42615000000000003,
+        "min": 0.3205,
+        "max": 0.5318
+      },
+      "column_subset_sec": {
+        "mean": 0.3422,
+        "std_dev": 0.08994398256692883,
+        "median": 0.3422,
+        "min": 0.2786,
+        "max": 0.4058
+      },
+      "filtered_query_sec": {
+        "mean": 0.3232,
+        "std_dev": 0.008485281374238578,
+        "median": 0.3232,
+        "min": 0.3172,
+        "max": 0.3292
+      },
+      "aggregation_query_sec": {
+        "mean": 0.40190000000000003,
+        "std_dev": 0.08796408357960651,
+        "median": 0.40190000000000003,
+        "min": 0.3397,
+        "max": 0.4641
+      }
+    },
+    {
+      "format": "avro",
+      "codec": "deflate",
+      "config_label": "AVRO (deflate)",
+      "scale": "quick_1pct",
+      "num_rows": 32146,
+      "file_size_bytes": 914797,
+      "file_size_mb": 0.87,
+      "raw_csv_mb": 3.29,
+      "compression_ratio": 3.78,
+      "space_saving_pct": 73.51,
+      "write_time_sec": {
+        "mean": 0.53975,
+        "std_dev": 0.03825447686219217,
+        "median": 0.53975,
+        "min": 0.5127,
+        "max": 0.5668
+      },
+      "write_throughput_mb_s": {
+        "mean": 1.62,
+        "std_dev": 0.11313708498984755,
+        "median": 1.62,
+        "min": 1.54,
+        "max": 1.7
+      },
+      "write_throughput_rows_s": {
+        "mean": 59704.85,
+        "std_dev": 4227.57931268001,
+        "median": 59704.85,
+        "min": 56715.5,
+        "max": 62694.2
+      },
+      "write_cpu_percent": {
+        "mean": 83.935,
+        "std_dev": 7.756961389616426,
+        "median": 83.935,
+        "min": 78.45,
+        "max": 89.42
+      },
+      "write_peak_ram_mb": {
+        "mean": 185.585,
+        "std_dev": 0.007071067811859044,
+        "median": 185.585,
+        "min": 185.58,
+        "max": 185.59
+      },
+      "full_scan_sec": {
+        "mean": 0.3133,
+        "std_dev": 0.0164048773235279,
+        "median": 0.3133,
+        "min": 0.3017,
+        "max": 0.3249
+      },
+      "column_subset_sec": {
+        "mean": 0.3381,
+        "std_dev": 0.03775950211536164,
+        "median": 0.3381,
+        "min": 0.3114,
+        "max": 0.3648
+      },
+      "filtered_query_sec": {
+        "mean": 0.32105,
+        "std_dev": 0.006717514421272168,
+        "median": 0.32105,
+        "min": 0.3163,
+        "max": 0.3258
+      },
+      "aggregation_query_sec": {
+        "mean": 0.34975,
+        "std_dev": 0.019586857838867367,
+        "median": 0.34975,
+        "min": 0.3359,
+        "max": 0.3636
+      }
+    },
+    {
+      "format": "sequencefile",
+      "codec": "none",
+      "config_label": "SEQUENCEFILE (none)",
+      "scale": "quick_1pct",
+      "num_rows": 32146,
+      "file_size_bytes": 15958704,
+      "file_size_mb": 15.22,
+      "raw_csv_mb": 3.29,
+      "compression_ratio": 0.22,
+      "space_saving_pct": -362.06,
+      "write_time_sec": {
+        "mean": 0.9002,
+        "std_dev": 0.1301076477383247,
+        "median": 0.9002,
+        "min": 0.8082,
+        "max": 0.9922
+      },
+      "write_throughput_mb_s": {
+        "mean": 17.085,
+        "std_dev": 2.4678026663410497,
+        "median": 17.085,
+        "min": 15.34,
+        "max": 18.83
+      },
+      "write_throughput_rows_s": {
+        "mean": 36085.25,
+        "std_dev": 5214.70037921643,
+        "median": 36085.25,
+        "min": 32397.9,
+        "max": 39772.6
+      },
+      "write_cpu_percent": {
+        "mean": 90.25,
+        "std_dev": 5.218448045156718,
+        "median": 90.25,
+        "min": 86.56,
+        "max": 93.94
+      },
+      "write_peak_ram_mb": {
+        "mean": 184.915,
+        "std_dev": 0.21920310216783134,
+        "median": 184.915,
+        "min": 184.76,
+        "max": 185.07
+      },
+      "full_scan_sec": {
+        "mean": 0.3587,
+        "std_dev": 0.008768124086713205,
+        "median": 0.3587,
+        "min": 0.3525,
+        "max": 0.3649
+      },
+      "column_subset_sec": {
+        "mean": 0.30810000000000004,
+        "std_dev": 0.022485995641732207,
+        "median": 0.30810000000000004,
+        "min": 0.2922,
+        "max": 0.324
+      },
+      "filtered_query_sec": {
+        "mean": 0.3144,
+        "std_dev": 0.005656854249492385,
+        "median": 0.3144,
+        "min": 0.3104,
+        "max": 0.3184
+      },
+      "aggregation_query_sec": {
+        "mean": 0.27695000000000003,
+        "std_dev": 0.0007778174593052343,
+        "median": 0.27695000000000003,
+        "min": 0.2764,
+        "max": 0.2775
+      }
+    },
+    {
+      "format": "sequencefile",
+      "codec": "record_deflate",
+      "config_label": "SEQUENCEFILE (record_deflate)",
+      "scale": "quick_1pct",
+      "num_rows": 32146,
+      "file_size_bytes": 9355468,
+      "file_size_mb": 8.92,
+      "raw_csv_mb": 3.29,
+      "compression_ratio": 0.37,
+      "space_saving_pct": -170.88,
+      "write_time_sec": {
+        "mean": 1.9796500000000001,
+        "std_dev": 0.10359114344382926,
+        "median": 1.9796500000000001,
+        "min": 1.9064,
+        "max": 2.0529
+      },
+      "write_throughput_mb_s": {
+        "mean": 4.515,
+        "std_dev": 0.23334523779156074,
+        "median": 4.515,
+        "min": 4.35,
+        "max": 4.68
+      },
+      "write_throughput_rows_s": {
+        "mean": 16260.550000000001,
+        "std_dev": 851.1444325142478,
+        "median": 16260.550000000001,
+        "min": 15658.7,
+        "max": 16862.4
+      },
+      "write_cpu_percent": {
+        "mean": 95.965,
+        "std_dev": 2.821356056934321,
+        "median": 95.965,
+        "min": 93.97,
+        "max": 97.96
+      },
+      "write_peak_ram_mb": {
+        "mean": 185.10500000000002,
+        "std_dev": 0.0070710678118791415,
+        "median": 185.10500000000002,
+        "min": 185.1,
+        "max": 185.11
+      },
+      "full_scan_sec": {
+        "mean": 0.6531,
+        "std_dev": 0.09630794359760776,
+        "median": 0.6531,
+        "min": 0.585,
+        "max": 0.7212
+      },
+      "column_subset_sec": {
+        "mean": 0.6143000000000001,
+        "std_dev": 0.07495331880577402,
+        "median": 0.6143000000000001,
+        "min": 0.5613,
+        "max": 0.6673
+      },
+      "filtered_query_sec": {
+        "mean": 0.60265,
+        "std_dev": 0.06441742776609445,
+        "median": 0.60265,
+        "min": 0.5571,
+        "max": 0.6482
+      },
+      "aggregation_query_sec": {
+        "mean": 0.67485,
+        "std_dev": 0.10528819971867687,
+        "median": 0.67485,
+        "min": 0.6004,
+        "max": 0.7493
+      }
+    },
+    {
+      "format": "sequencefile",
+      "codec": "block_deflate",
+      "config_label": "SEQUENCEFILE (block_deflate)",
+      "scale": "quick_1pct",
+      "num_rows": 32146,
+      "file_size_bytes": 1244462,
+      "file_size_mb": 1.19,
+      "raw_csv_mb": 3.29,
+      "compression_ratio": 2.78,
+      "space_saving_pct": 63.97,
+      "write_time_sec": {
+        "mean": 1.33645,
+        "std_dev": 0.2919643899519255,
+        "median": 1.33645,
+        "min": 1.13,
+        "max": 1.5429
+      },
+      "write_throughput_mb_s": {
+        "mean": 0.91,
+        "std_dev": 0.19798989873223333,
+        "median": 0.91,
+        "min": 0.77,
+        "max": 1.05
+      },
+      "write_throughput_rows_s": {
+        "mean": 24641.300000000003,
+        "std_dev": 5382.6382397482375,
+        "median": 24641.300000000003,
+        "min": 20835.2,
+        "max": 28447.4
+      },
+      "write_cpu_percent": {
+        "mean": 94.78999999999999,
+        "std_dev": 2.644579361637684,
+        "median": 94.78999999999999,
+        "min": 92.92,
+        "max": 96.66
+      },
+      "write_peak_ram_mb": {
+        "mean": 191.27499999999998,
+        "std_dev": 0.5161879502661725,
+        "median": 191.27499999999998,
+        "min": 190.91,
+        "max": 191.64
+      },
+      "full_scan_sec": {
+        "mean": 0.01285,
+        "std_dev": 0.017606958851545035,
+        "median": 0.01285,
+        "min": 0.0004,
+        "max": 0.0253
+      },
+      "column_subset_sec": {
+        "mean": 0.00045,
+        "std_dev": 0.00021213203435596425,
+        "median": 0.00045,
+        "min": 0.0003,
+        "max": 0.0006
+      },
+      "filtered_query_sec": {
+        "mean": 0.0006000000000000001,
+        "std_dev": 0.000565685424949238,
+        "median": 0.0006000000000000001,
+        "min": 0.0002,
+        "max": 0.001
+      },
+      "aggregation_query_sec": {
+        "mean": 0.00030000000000000003,
+        "std_dev": 0.0001414213562373095,
+        "median": 0.00030000000000000003,
+        "min": 0.0002,
+        "max": 0.0004
+      }
+    }
+  ]
+}

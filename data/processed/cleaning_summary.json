@@ -1,0 +1,12 @@
+{
+  "initial_rows": 3475226,
+  "cleaned_rows": 3214622,
+  "dropped_total": 260604,
+  "retention_rate_pct": 92.5,
+  "breakdown": {
+    "invalid_timestamps": 2051,
+    "invalid_or_negative_fares": 145551,
+    "invalid_distances": 109636,
+    "invalid_passenger_counts": 24659
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "quick_1pct": {
+    "ratio": 0.01,
+    "row_count": 32146,
+    "parquet_path": "D:\\BDA-PROJECT\\data\\samples\\quick_1pct.parquet",
+    "parquet_size_mb": 0.92,
+    "csv_path": "D:\\BDA-PROJECT\\data\\samples\\quick_1pct_raw.csv",
+    "csv_raw_size_mb": 3.29,
+    "baseline_csv_bytes": 3453793
+  },
+  "sample_10pct": {
+    "ratio": 0.1,
+    "row_count": 321462,
+    "parquet_path": "D:\\BDA-PROJECT\\data\\samples\\sample_10pct.parquet",
+    "parquet_size_mb": 8.24,
+    "csv_path": "D:\\BDA-PROJECT\\data\\samples\\sample_10pct_raw.csv",
+    "csv_raw_size_mb": 32.93,
+    "baseline_csv_bytes": 34531281
+  },
+  "sample_50pct": {
+    "ratio": 0.5,
+    "row_count": 1607311,
+    "parquet_path": "D:\\BDA-PROJECT\\data\\samples\\sample_50pct.parquet",
+    "parquet_size_mb": 39.75,
+    "csv_path": "D:\\BDA-PROJECT\\data\\samples\\sample_50pct_raw.csv",
+    "csv_raw_size_mb": 164.66,
+    "baseline_csv_bytes": 172653457
+  },
+  "full_100pct": {
+    "ratio": 1.0,
+    "row_count": 3214622,
+    "parquet_path": "D:\\BDA-PROJECT\\data\\samples\\full_100pct.parquet",
+    "parquet_size_mb": 62.62,
+    "csv_path": "D:\\BDA-PROJECT\\data\\samples\\full_100pct_raw.csv",
+    "csv_raw_size_mb": 329.31,
+    "baseline_csv_bytes": 345301700
+  }
+}

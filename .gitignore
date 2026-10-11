@@ -1,0 +1,117 @@
+# ==============================================================================
+# Git Ignore - Hadoop Storage Format Benchmarking Framework (HSFB)
+# Department of Computer Science & Engineering | DSCE Bengaluru
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# Python & Bytecode Cache
+# ------------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# ------------------------------------------------------------------------------
+# Virtual Environments & Packaging
+# ------------------------------------------------------------------------------
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ------------------------------------------------------------------------------
+# Unit Testing & Coverage
+# ------------------------------------------------------------------------------
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.cache/
+nosetests.xml
+coverage.xml
+*.cover
+
+# ------------------------------------------------------------------------------
+# IDEs, Editors & Operating Systems
+# ------------------------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+*.tmp
+
+# ------------------------------------------------------------------------------
+# Logs & Environment Secrets
+# ------------------------------------------------------------------------------
+*.log
+.env
+.env.local
+.env.*.local
+.streamlit/
+.ipynb_checkpoints/
+
+# ------------------------------------------------------------------------------
+# Large Big Data Payloads & Benchmark Artifacts
+# (Prevents multi-gigabyte raw/processed/benchmark files from being pushed to Git)
+# ------------------------------------------------------------------------------
+data/**/*.parquet
+data/**/*.avro
+data/**/*.seq
+data/**/*.csv
+data/**/*.csv.tmp
+
+# Retain directory structure via .gitkeep
+!data/**/.gitkeep
+
+# Whitelist small benchmark summary metadata and JSON reports for instant loading
+!data/benchmark_output/benchmark_results.json
+!data/benchmark_output/benchmark_summary.csv
+!data/benchmark_output/schema_evolution/schema_evolution_matrix.json
+!data/processed/cleaning_summary.json
+!data/samples/scales_metadata.json
+
+# ------------------------------------------------------------------------------
+# Docker & Container Artifacts
+# ------------------------------------------------------------------------------
+*.cid
+*.pid
+
+# ------------------------------------------------------------------------------
+# Documentation (Local only as requested)
+# ------------------------------------------------------------------------------
+docs/
+
+# ------------------------------------------------------------------------------
+# Screenshot Automation Tooling
+# ------------------------------------------------------------------------------
+capture_screenshots.py

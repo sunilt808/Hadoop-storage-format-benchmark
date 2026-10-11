@@ -1,0 +1,98 @@
+[
+  {
+    "format": "Parquet",
+    "operation": "Add Column (driver_rating)",
+    "backward_compatible": "PASS",
+    "forward_compatible": "PASS",
+    "status": "PASS",
+    "technical_details": "Parquet columnar storage allows readers to ignore columns that are not present in older files."
+  },
+  {
+    "format": "Parquet",
+    "operation": "Remove Column (extra)",
+    "backward_compatible": "PASS",
+    "forward_compatible": "PASS",
+    "status": "PASS",
+    "technical_details": "Parquet readers can project only the columns required by the reader."
+  },
+  {
+    "format": "Parquet",
+    "operation": "Rename Column (fare_amount -> base_fare)",
+    "backward_compatible": "PARTIAL",
+    "forward_compatible": "PARTIAL",
+    "status": "PASS (WITH METADATA ALIAS)",
+    "technical_details": "Parquet normally matches columns by name. Renaming requires explicit projection or table-format column identity such as Iceberg or Delta."
+  },
+  {
+    "format": "Parquet",
+    "operation": "Type Widening (int32 -> int64)",
+    "backward_compatible": "PASS",
+    "forward_compatible": "PASS",
+    "status": "PASS",
+    "technical_details": "PyArrow and Parquet support compatible numeric type conversions during Arrow table operations."
+  },
+  {
+    "format": "Avro",
+    "operation": "Add Column with Default (driver_rating)",
+    "backward_compatible": "PASS",
+    "forward_compatible": "PASS",
+    "status": "PASS (FULL)",
+    "technical_details": "Avro schema resolution inserts the reader schema default value when the writer schema does not contain the new field."
+  },
+  {
+    "format": "Avro",
+    "operation": "Remove Column (extra)",
+    "backward_compatible": "PASS",
+    "forward_compatible": "PASS",
+    "status": "PASS (FULL)",
+    "technical_details": "Avro reader schema can ignore fields that exist in the writer schema but are absent from the reader schema."
+  },
+  {
+    "format": "Avro",
+    "operation": "Rename Column (fare_amount -> base_fare)",
+    "backward_compatible": "PASS",
+    "forward_compatible": "PASS",
+    "status": "PASS (WITH ALIASES)",
+    "technical_details": "Avro aliases allow a renamed reader field to resolve against the old writer field name."
+  },
+  {
+    "format": "Avro",
+    "operation": "Type Promotion (int -> long)",
+    "backward_compatible": "PASS",
+    "forward_compatible": "PASS",
+    "status": "PASS (FULL)",
+    "technical_details": "Avro supports numeric promotion such as int to long and long to float."
+  },
+  {
+    "format": "SequenceFile",
+    "operation": "Add Column (driver_rating)",
+    "backward_compatible": "PASS",
+    "forward_compatible": "PASS",
+    "status": "PASS (WITH JSON/MAP)",
+    "technical_details": "SequenceFiles store raw Key/Value byte streams without schema headers. Schema evolution depends on the application-layer serialization."
+  },
+  {
+    "format": "SequenceFile",
+    "operation": "Remove Column (extra)",
+    "backward_compatible": "PASS",
+    "forward_compatible": "PASS",
+    "status": "PASS (WITH JSON/MAP)",
+    "technical_details": "Application-layer deserializers can ignore attributes that are no longer required."
+  },
+  {
+    "format": "SequenceFile",
+    "operation": "Rename Column (fare_amount -> base_fare)",
+    "backward_compatible": "FAIL",
+    "forward_compatible": "FAIL",
+    "status": "FAIL (REQUIRES APPLICATION MAPPING)",
+    "technical_details": "SequenceFile does not provide built-in schema resolution or field aliases. Renaming requires application-level mapping."
+  },
+  {
+    "format": "SequenceFile",
+    "operation": "Type Widening (int -> long)",
+    "backward_compatible": "PASS",
+    "forward_compatible": "PASS",
+    "status": "PASS (DYNAMIC)",
+    "technical_details": "Compatibility depends on the payload serialization. Dynamic payloads can handle numeric widening, while rigid Writable types may not."
+  }
+]
