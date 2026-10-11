@@ -236,9 +236,8 @@ with st.sidebar:
     # Footer
     st.markdown("""
     <div class="sidebar-footer">
-        <p>Dayananda Sagar College of Engineering<br/>
-        Department of CSE · BDA Lab<br/>
-        Bengaluru, Karnataka</p>
+        <p>Hadoop Storage Format Benchmarking (HSFB)<br/>
+        Big Data Analytics Engineering</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -269,7 +268,7 @@ if page == "🏠 Home":
     st.markdown("""
     <div class="home-hero-banner">
         <div class="hero-content">
-            <div class="hero-chip">🚀 Big Data Analytics Capstone · Topic 52</div>
+            <div class="hero-chip">⚡ Big Data Benchmarking Framework</div>
             <h1 class="hero-title">Empirical Storage Format Benchmarking</h1>
             <p class="hero-desc">
                 High-performance evaluation framework analyzing <strong>Apache Parquet</strong>, <strong>Apache Avro</strong>, and <strong>Hadoop SequenceFile</strong> on 3.2M+ NYC Taxi Trip Records across compression ratio, write throughput, vectorized column projection, and schema evolution.

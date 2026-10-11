@@ -3,12 +3,7 @@
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![Apache Hadoop](https://img.shields.io/badge/Apache%20Hadoop-HDFS%203.3-orange.svg)](https://hadoop.apache.org/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-red.svg)](https://streamlit.io/)
-[![Department](https://img.shields.io/badge/DSCE-Department%20of%20CSE-green.svg)](https://www.dsce.edu.in/)
 [![Tests](https://img.shields.io/badge/Pytest-5%20Passing-brightgreen.svg)](tests/)
-
-> **Topic 52 — Big Data Analytics (BDA) Capstone Project**  
-> **Institution:** Dayananda Sagar College of Engineering (DSCE), Bengaluru  
-> **Department:** Department of Computer Science & Engineering (CSE)
 
 ---
 
