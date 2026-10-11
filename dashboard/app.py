@@ -190,7 +190,7 @@ with st.sidebar:
     st.markdown("##### Navigation")
     page = st.radio(
         "Go to",
-        options=["🏠 Home", "🚀 Run Benchmark", "📊 Results", "🏆 Recommendation"],
+        options=["🏠 Home", "🚀 Run Benchmark", "📊 Results", "🏆 Recommendation", "🌐 Deploy App"],
         label_visibility="collapsed"
     )
 
@@ -725,3 +725,125 @@ elif page == "🏆 Recommendation":
         {"Format": "CSV (Baseline)", "Add Column": "⚠️ Manual", "Remove Column": "⚠️ Manual", "Rename Column": "⚠️ Manual", "Type Widening": "⚠️ Manual"}
     ])
     st.dataframe(schema_matrix, use_container_width=True, hide_index=True)
+
+
+# ==============================================================================
+# PAGE: DEPLOY APP
+# ==============================================================================
+elif page == "🌐 Deploy App":
+
+    st.markdown("""
+    <div class="deploy-hero">
+        <div class="hero-chip">🚀 Production & Cloud Hosting</div>
+        <h1 class="hero-title">Deploy This App Using...</h1>
+        <p class="hero-desc">
+            Choose the deployment target that fits your workload, infrastructure requirements, and team collaboration needs.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    d1, d2, d3 = st.columns(3)
+
+    with d1:
+        st.markdown("""
+        <div class="deploy-card streamlit-cloud">
+            <div class="deploy-header">
+                <div class="deploy-icon-box st-icon-bg">
+                    <span style="font-size: 1.5rem;">👑</span>
+                </div>
+                <div>
+                    <h3 class="deploy-title">Streamlit Community Cloud</h3>
+                    <span class="deploy-tier-tag free-tag">For community · Always free</span>
+                </div>
+            </div>
+            <p class="deploy-subtitle">The easiest, fastest way to share your data apps with the global analytics community directly from GitHub.</p>
+            <ul class="deploy-features">
+                <li><span class="check-icon">✓</span> <span>For personal hobbies, academia, and portfolio</span></li>
+                <li><span class="check-icon">✓</span> <span>Deploy unlimited public apps with CI/CD</span></li>
+                <li><span class="check-icon">✓</span> <span>Zero configuration: auto-syncs with your repository</span></li>
+                <li><span class="check-icon">✓</span> <span>Explore and learn from popular community applications</span></li>
+            </ul>
+            <div class="deploy-action">
+                <a href="https://share.streamlit.io/" target="_blank" class="deploy-btn st-btn">
+                    Deploy on Streamlit Cloud →
+                </a>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with d2:
+        st.markdown("""
+        <div class="deploy-card snowflake-cloud">
+            <div class="deploy-header">
+                <div class="deploy-icon-box sf-icon-bg">
+                    <span style="font-size: 1.5rem;">❄️</span>
+                </div>
+                <div>
+                    <h3 class="deploy-title">Snowflake</h3>
+                    <span class="deploy-tier-tag ent-tag">For enterprise</span>
+                </div>
+            </div>
+            <p class="deploy-subtitle">Deploy inside your Snowflake data cloud perimeter with enterprise-grade governance and Native Apps.</p>
+            <ul class="deploy-features">
+                <li><span class="check-icon">✓</span> <span>Enterprise-level security, HIPAA/SOC2 compliance</span></li>
+                <li><span class="check-icon">✓</span> <span>Fully managed data infrastructure & autoscaling</span></li>
+                <li><span class="check-icon">✓</span> <span>Deploy unlimited private apps with role-based sharing</span></li>
+                <li><span class="check-icon">✓</span> <span>Seamless integration with Snowflake Snowpark and tables</span></li>
+            </ul>
+            <div class="deploy-action">
+                <a href="https://www.snowflake.com/en/data-cloud/overview/streamlit-in-snowflake/" target="_blank" class="deploy-btn sf-btn">
+                    Explore Streamlit in Snowflake →
+                </a>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with d3:
+        st.markdown("""
+        <div class="deploy-card custom-cloud">
+            <div class="deploy-header">
+                <div class="deploy-icon-box custom-icon-bg">
+                    <span style="font-size: 1.5rem;">🚀</span>
+                </div>
+                <div>
+                    <h3 class="deploy-title">Other Platforms</h3>
+                    <span class="deploy-tier-tag custom-tag">For custom deployment</span>
+                </div>
+            </div>
+            <p class="deploy-subtitle">Deploy on your own bare-metal servers, Docker containers, Kubernetes, AWS, GCP, or Azure.</p>
+            <ul class="deploy-features">
+                <li><span class="check-icon">✓</span> <span>Deploy on your own hardware or VPC cloud service</span></li>
+                <li><span class="check-icon">✓</span> <span>Included <code>docker-compose.yml</code> for instant Hadoop clusters</span></li>
+                <li><span class="check-icon">✓</span> <span>Custom auth, reverse proxy (NGINX/Caddy), and SSL</span></li>
+                <li><span class="check-icon">✓</span> <span>Full control over compute, RAM, storage, and networking costs</span></li>
+            </ul>
+            <div class="deploy-action">
+                <a href="https://docs.streamlit.io/deploy/tutorials" target="_blank" class="deploy-btn custom-btn">
+                    View Self-Host Guide →
+                </a>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+    st.markdown("<div style='height: 1.5rem;'></div>", unsafe_allow_html=True)
+
+    # Quick Deployment Instructions Card
+    st.markdown("""
+    <div class="section-header">
+        <span class="section-icon">⚙️</span>
+        <h4>Quick 1-Click Streamlit Cloud Instructions</h4>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("""
+    <div class="winner-card" style="border-color: rgba(59, 130, 246, 0.4);">
+        <h3 style="color: #60a5fa;">How to deploy this GitHub repo in 2 minutes:</h3>
+        <p style="margin-bottom: 0.75rem;">
+            1. Go to <a href="https://share.streamlit.io/" target="_blank" style="color: #93c5fd; text-decoration: underline;">share.streamlit.io</a> and sign in with GitHub.<br/>
+            2. Click <strong>New app</strong> and select your repository: <code>sunilt808/Hadoop-storage-format-benchmark</code>.<br/>
+            3. Set the Main file path to: <code>dashboard/app.py</code>.<br/>
+            4. Click <strong>Deploy!</strong> Your dashboard will be live on a public URL immediately with full dark-mode and animations.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+

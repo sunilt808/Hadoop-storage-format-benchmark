@@ -227,32 +227,41 @@ html, body {
     padding-bottom: 4rem !important;
 }
 
-/* Hide Streamlit boilerplate header / buttons */
-#MainMenu, footer, .stDeployButton, [data-testid="stToolbar"], [data-testid="stDecoration"], [data-testid="stHeaderActionElements"] {
+/* Hide Streamlit boilerplate footer & deploy buttons only */
+#MainMenu, footer, .stDeployButton, [data-testid="stDecoration"] {
     display: none !important;
 }
 
-/* Streamlit Header & Sidebar Toggle Button */
+/* Ensure Header is transparent and does not block clicks */
 header[data-testid="stHeader"] {
     background: transparent !important;
     height: 3.5rem !important;
-    z-index: 100000 !important;
+    z-index: 99999 !important;
 }
 
-div[data-testid="stSidebarCollapsedControl"],
-div[data-testid="stSidebarCollapseButton"],
-div[data-testid="stExpandSidebarButton"] {
+/* 3-Line Hamburger Menu Toggle Button (Permanently Visible & Clickable) */
+[data-testid="stSidebarCollapsedControl"],
+[data-testid="stSidebarCollapseButton"],
+[data-testid="stExpandSidebarButton"] {
     display: block !important;
     visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
     position: fixed !important;
     top: 0.85rem !important;
     left: 0.85rem !important;
-    z-index: 1000000 !important;
+    z-index: 9999999 !important;
 }
 
-div[data-testid="stSidebarCollapsedControl"] button,
-div[data-testid="stExpandSidebarButton"] button,
-div[data-testid="stSidebarCollapseButton"] button {
+/* Inside the open sidebar, let collapse button sit cleanly at the top-right of the sidebar */
+section[data-testid="stSidebar"] [data-testid="stSidebarCollapseButton"] {
+    position: static !important;
+    margin-bottom: 0.5rem !important;
+}
+
+[data-testid="stSidebarCollapsedControl"] button,
+[data-testid="stExpandSidebarButton"] button,
+[data-testid="stSidebarCollapseButton"] button {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -264,19 +273,20 @@ div[data-testid="stSidebarCollapseButton"] button {
     height: 40px !important;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5) !important;
     cursor: pointer !important;
+    z-index: 9999999 !important;
 }
 
-/* Hide default arrow icon inside toggle */
-div[data-testid="stSidebarCollapsedControl"] button svg,
-div[data-testid="stExpandSidebarButton"] button svg,
-div[data-testid="stSidebarCollapseButton"] button svg {
+/* Hide default chevron SVG inside toggle */
+[data-testid="stSidebarCollapsedControl"] button svg,
+[data-testid="stExpandSidebarButton"] button svg,
+[data-testid="stSidebarCollapseButton"] button svg {
     display: none !important;
 }
 
 /* 3-line hamburger icon */
-div[data-testid="stSidebarCollapsedControl"] button::before,
-div[data-testid="stExpandSidebarButton"] button::before,
-div[data-testid="stSidebarCollapseButton"] button::before {
+[data-testid="stSidebarCollapsedControl"] button::before,
+[data-testid="stExpandSidebarButton"] button::before,
+[data-testid="stSidebarCollapseButton"] button::before {
     content: '' !important;
     position: absolute !important;
     width: 20px !important;
@@ -287,13 +297,14 @@ div[data-testid="stSidebarCollapseButton"] button::before {
     transition: background 0.2s ease, box-shadow 0.2s ease !important;
 }
 
-div[data-testid="stSidebarCollapsedControl"] button:hover,
-div[data-testid="stExpandSidebarButton"] button:hover,
-div[data-testid="stSidebarCollapseButton"] button:hover {
+[data-testid="stSidebarCollapsedControl"] button:hover,
+[data-testid="stExpandSidebarButton"] button:hover,
+[data-testid="stSidebarCollapseButton"] button:hover {
     background: #2563eb !important;
     border-color: #60a5fa !important;
     box-shadow: 0 0 18px rgba(59, 130, 246, 0.8) !important;
 }
+
 
 
 
@@ -1072,6 +1083,244 @@ div[data-testid="stPlotlyChart"] {
 ::-webkit-scrollbar-track {
     background: rgba(9, 15, 30, 0.8);
 }
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, rgba(96, 165, 250, 0.5), rgba(139, 92, 246, 0.5));
+    border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, rgba(96, 165, 250, 0.85), rgba(139, 92, 246, 0.85));
+}
+
+/* ==============================================================================
+   7. DEPLOY PAGE STYLES
+   ============================================================================== */
+.deploy-hero {
+    position: relative;
+    padding: 1.6rem 2rem;
+    margin-bottom: 1.6rem;
+    border-radius: var(--r-l);
+    background: linear-gradient(135deg, rgba(20, 32, 58, 0.85) 0%, rgba(11, 19, 36, 0.95) 100%);
+    border: 1px solid var(--line-strong);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+}
+
+.deploy-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2.5px;
+    background: linear-gradient(90deg, #ec4899, #8b5cf6, #3b82f6, #10b981);
+}
+
+.deploy-hero .hero-chip {
+    display: inline-block;
+    padding: 0.25rem 0.65rem;
+    border-radius: 9999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    background: rgba(236, 72, 153, 0.15);
+    color: #f472b6;
+    border: 1px solid rgba(236, 72, 153, 0.35);
+    margin-bottom: 0.65rem;
+}
+
+.deploy-hero .hero-title {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.65rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: #ffffff;
+}
+
+.deploy-hero .hero-desc {
+    margin: 0;
+    font-size: 0.94rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 900px;
+}
+
+.deploy-card {
+    position: relative;
+    padding: 1.5rem 1.6rem;
+    border-radius: var(--r-l);
+    background: linear-gradient(135deg, rgba(28, 41, 68, 0.75) 0%, rgba(13, 21, 39, 0.9) 100%);
+    border: 1px solid var(--line-strong);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+    min-height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.35s var(--ease-spring);
+}
+
+.deploy-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.5);
+}
+
+.deploy-card.streamlit-cloud {
+    border-top: 3.5px solid #ff4b4b;
+}
+.deploy-card.streamlit-cloud:hover {
+    border-color: rgba(255, 75, 75, 0.5);
+    box-shadow: 0 16px 40px rgba(255, 75, 75, 0.2);
+}
+
+.deploy-card.snowflake-cloud {
+    border-top: 3.5px solid #29b5e8;
+}
+.deploy-card.snowflake-cloud:hover {
+    border-color: rgba(41, 181, 232, 0.5);
+    box-shadow: 0 16px 40px rgba(41, 181, 232, 0.2);
+}
+
+.deploy-card.custom-cloud {
+    border-top: 3.5px solid #8b5cf6;
+}
+.deploy-card.custom-cloud:hover {
+    border-color: rgba(139, 92, 246, 0.5);
+    box-shadow: 0 16px 40px rgba(139, 92, 246, 0.2);
+}
+
+.deploy-header {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin-bottom: 0.9rem;
+}
+
+.deploy-icon-box {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.st-icon-bg {
+    background: rgba(255, 75, 75, 0.15);
+    border: 1px solid rgba(255, 75, 75, 0.35);
+}
+.sf-icon-bg {
+    background: rgba(41, 181, 232, 0.15);
+    border: 1px solid rgba(41, 181, 232, 0.35);
+}
+.custom-icon-bg {
+    background: rgba(139, 92, 246, 0.15);
+    border: 1px solid rgba(139, 92, 246, 0.35);
+}
+
+.deploy-title {
+    margin: 0 0 0.2rem 0;
+    font-size: 1.18rem;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.deploy-tier-tag {
+    display: inline-block;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+.free-tag {
+    background: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.35);
+}
+.ent-tag {
+    background: rgba(41, 181, 232, 0.15);
+    color: #38bdf8;
+    border: 1px solid rgba(41, 181, 232, 0.35);
+}
+.custom-tag {
+    background: rgba(139, 92, 246, 0.15);
+    color: #c084fc;
+    border: 1px solid rgba(139, 92, 246, 0.35);
+}
+
+.deploy-subtitle {
+    font-size: 0.86rem;
+    line-height: 1.55;
+    color: #94a3b8;
+    margin: 0.3rem 0 1rem 0;
+}
+
+.deploy-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.4rem 0;
+}
+
+.deploy-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: #cbd5e1;
+    margin-bottom: 0.65rem;
+}
+
+.check-icon {
+    color: #34d399;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+.deploy-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    border-radius: 9px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    text-decoration: none !important;
+    transition: all 0.25s ease;
+}
+
+.st-btn {
+    background: linear-gradient(135deg, #ff4b4b 0%, #e11d48 100%);
+    color: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(255, 75, 75, 0.35);
+}
+.st-btn:hover {
+    box-shadow: 0 6px 22px rgba(255, 75, 75, 0.6);
+    transform: translateY(-2px);
+}
+
+.sf-btn {
+    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+    color: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+}
+.sf-btn:hover {
+    box-shadow: 0 6px 22px rgba(2, 132, 199, 0.6);
+    transform: translateY(-2px);
+}
+
+.custom-btn {
+    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+    color: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35);
+}
+.custom-btn:hover {
+    box-shadow: 0 6px 22px rgba(124, 58, 237, 0.6);
+    transform: translateY(-2px);
+}
+
 ::-webkit-scrollbar-thumb {
     background: linear-gradient(180deg, rgba(96, 165, 250, 0.5), rgba(139, 92, 246, 0.5));
     border-radius: 6px;
